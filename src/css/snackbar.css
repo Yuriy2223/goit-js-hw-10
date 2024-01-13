@@ -1,0 +1,43 @@
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 320px;
+}
+
+.form input[type='number'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #2b2828;
+}
+
+.form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.form legend {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form label > input[type='radio'] {
+  margin-right: 10px;
+}
+
+.form button[type='submit'] {
+  background-color: #c9ced4;
+  color: #fcfeff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form button[type='submit']:hover {
+  background-color: #999ea4;
+}
