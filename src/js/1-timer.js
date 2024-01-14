@@ -4,6 +4,10 @@ import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
 let userSelectedDate;
+let timeInterval;
+
+const startButton = document.querySelector('[data-start]');
+startButton.disabled = true;
 
 const options = {
   enableTime: true,
@@ -17,10 +21,11 @@ const options = {
         title: 'Warning',
         message: 'Please choose a date in the future',
       });
-      document.querySelector('[data-start]').disabled = true;
+      startButton.disabled = true;
+      clearInterval(timeInterval);
     } else {
       userSelectedDate = selectedDate;
-      document.querySelector('[data-start]').disabled = false;
+      startButton.disabled = false;
     }
   },
 };
@@ -43,8 +48,9 @@ const convertMs = ms => {
 
 const addLeadingZero = value => String(value).padStart(2, '0');
 
-document.querySelector('[data-start]').addEventListener('click', () => {
-  let timeInterval = setInterval(() => {
+startButton.addEventListener('click', () => {
+  clearInterval(timeInterval);
+  timeInterval = setInterval(() => {
     const timeDifference = userSelectedDate - new Date();
     if (timeDifference <= 0) {
       clearInterval(timeInterval);

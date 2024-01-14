@@ -15,13 +15,13 @@ document.querySelector('.form').addEventListener('submit', event => {
     .then(delay => {
       iziToast.success({
         title: 'Success',
-        message: `Fulfilled promise in ${delay}ms`,
+        message: `✅ Обіцянка виконана за ${delay}мс`,
       });
     })
     .catch(delay => {
       iziToast.error({
         title: 'Error',
-        message: `Rejected promise in ${delay}ms`,
+        message: `❌ Обіцянку відхилено за ${delay}мс`,
       });
     });
 });
